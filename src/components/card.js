@@ -7,7 +7,6 @@ class Card extends Component {
         return (
             <div className="card">
             { Input('Red') }
-            { Input('Red') }
             </div>
         )
     }
