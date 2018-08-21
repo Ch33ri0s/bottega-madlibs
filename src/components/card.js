@@ -24,22 +24,23 @@ class Card extends Component {
             nounThree: '',
             celebFour: '',
             adjectiveFive: ''
+
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
-    }
+    } 
 
     handleInputChange(event) {
         this.setState({ [event.target.name]: event.target.value })
-        console.log({ [event.target.name]: event.target.value })
+        console.log(this.state);
     }
 
     render() {
-        
+
         const inputData = [
             {title: 'Color', state: this.state.color, name: 'color'},
             {title: 'Plural Noun', state: this.state.pluralNoun, name: 'pluralNoun'},
-            {title: 'Adjective', state: this.state.adjective, name: 'adjectiveOne'},
+            {title: 'Adjective', state: this.state.adjectiveOne, name: 'adjectiveOne'},
             {title: 'Celebrity', state: this.state.celebOne, name: 'celebOne'},
 
             {title: 'Adjective', state: this.state.adjectiveTwo, name: 'adjectiveTwo'},
@@ -55,19 +56,14 @@ class Card extends Component {
             {title: 'Adjective', state: this.state.adjectiveFour, name: 'adjectiveFour'},
             {title: 'Noun', state: this.state.nounThree, name: 'nounThree'},
             {title: 'Celebrity', state: this.state.celebFour, name: 'celebFour'},
-            {title: 'Adjective', state: this.state.adjectiveFive, name: 'adjectiveFive'}
+            {title: 'Adjective', state: this.state.adjectiveFive, name: 'adjectiveFive'},
         ]
 
         return (
             <div className="card">
-            {
-                inputData.map(data => Input( (data), this.handleInputChange ))
-            }
-
-                {/* { { Input('Color', this.state.color, this.handleInputChange, 'color') }
-                { Input('Plural Noun', this.state.pluralNoun, this.handleInputChange, 'pluralNoun') }
-                { Input('Adjective', this.state.adjectiveOne, this.handleInputChange, 'adjectiveOne') }
-                { Input('Celebrity', this.state.celebOne, this.handleInputChange, 'celebOne') } } */}
+                {
+                    inputData.map(data => Input( (data), this.handleInputChange ))
+                }
             </div>
         )
     }
